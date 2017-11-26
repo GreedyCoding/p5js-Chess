@@ -32,21 +32,19 @@ class PawnB {
 
   highlight(){
 
-    if (this.firstClick === true){
+    if (this.firstClick && this.firstMove){
       grid[this.i][this.j+1].toHighlight = true;
       grid[this.i][this.j+2].toHighlight = true;
+    } else if (!this.firstClick && this.firstMove) {
+      grid[this.i][this.j+1].toHighlight = false;
+      grid[this.i][this.j+2].toHighlight = false;
+    } else if (this.firtClick && !this.firstMove){
+      grid[this.i][this.j+1].toHighlight = true;
+      grid[this.i][this.j+2].toHighlight = false;
+    } else if (!this.firstClick && !this.firstMove){
+      grid[this.i][this.j+1].toHighlight = false;
+      grid[this.i][this.j+2].toHighlight = false;
     }
-    // } else {
-    //   grid[this.i][this.j+1].toHighlight = false;
-    //   grid[this.i][this.j+2].toHighlight = false;
-    // }
-    // } else if (this.firtClick && !this.firstMove){
-    //   grid[this.i][this.j+1].toHighlight = true;
-    //   grid[this.i][this.j+2].toHighlight = false;
-    // } else if (!this.firstClick && !this.firstMove){
-    //   grid[this.i][this.j+1].toHighlight = false;
-    //   grid[this.i][this.j+2].toHighlight = false;
-    // }
 
   }
 
