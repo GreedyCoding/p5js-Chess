@@ -32,23 +32,23 @@ class PawnB {
 
   highlight(){
 
-    // If Pawn is Clicked and its his first Move highlight the 2 cells in front of pawn
-    if (this.firstClick && this.firstMove){
-      grid[this.i][this.j+1].toHighlight = true;
-      grid[this.i][this.j+2].toHighlight = true;
-    // Else if Pawn is not Clicked and its his first Move don´t highight
-    } else if (!this.firstClick && this.firstMove) {
-      grid[this.i][this.j+1].toHighlight = false;
-      grid[this.i][this.j+2].toHighlight = false;
-    // Else if Pawn is Clicked and its not his first Move highight 1 cell in front
-    } else if (this.firstClick && !this.firstMove){
-      grid[this.i][this.j+1].toHighlight = true;
-      grid[this.i][this.j+2].toHighlight = false;
-    // Else if Pawn is not Clicked and its not his first Move dont´t highlight
-    } else if (!this.firstClick && !this.firstMove){
-      grid[this.i][this.j+1].toHighlight = false;
-      grid[this.i][this.j+2].toHighlight = false;
-    }
+      if (this.firstClick){
+         grid[this.i][this.j+1].toHighlight = true;
+
+        // Conditional Ternary Operator Function replacing if else loop
+        //  "if" condition ? "true set" expr1 : "else set" expr2
+         this.firstMove
+            ? grid[this.i][this.j+2].toHighlight = true
+            : grid[this.i][this.j+2].toHighlight = false;
+
+      } else {
+        
+          grid[this.i][this.j+1].toHighlight = false;
+
+          this.firstMove
+            ? grid[this.i][this.j+2].toHighlight = false
+            : grid[this.i][this.j+2].toHighlight = false;
+      }
 
   }
 
