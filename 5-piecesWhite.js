@@ -8,18 +8,22 @@ class PawnW extends PawnB {
 
     highlight(){
 
-      var x = this.i*scl;
-      var y1 = (this.j-1)*scl;
-      var y2 = (this.j-2)*scl;
 
+      var jm1 = constrain(this.j-1 ,0,grid.length-1);
+      var jm2 = constrain(this.j-2 ,0,grid.length-1);
 
       if (this.firstClick && this.firstMove){
-
-        noStroke();
-        fill(0,255,0,127)
-        rect(x, y1, scl, scl)
-        rect(x, y2, scl, scl);
-
+        grid[this.i][jm1].toHighlight = true;
+        grid[this.i][jm2].toHighlight = true;
+      } else if (!this.firstClick && this.firstMove){
+        grid[this.i][jm1].toHighlight = false;
+        grid[this.i][jm2].toHighlight = false;
+      } else if (this.firstClick && !this.firstMove){
+        grid[this.i][jm1].toHighlight = true;
+        grid[this.i][jm2].toHighlight = false;
+      } else if (!this.firstClick && !this.firstMove){
+        grid[this.i][jm1].toHighlight = false;
+        grid[this.i][jm2].toHighlight = false;
       }
 
     }

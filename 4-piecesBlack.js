@@ -32,23 +32,23 @@ class PawnB {
 
   highlight(){
 
-      if (this.firstClick){
-         grid[this.i][this.j+1].toHighlight = true;
 
-        // Conditional Ternary Operator Function replacing if else loop
-        //  "if" condition ? "true set" expr1 : "else set" expr2
-         this.firstMove
-            ? grid[this.i][this.j+2].toHighlight = true
-            : grid[this.i][this.j+2].toHighlight = false;
+    var jp1 = constrain(this.j+1 ,0,grid.length-1);
+    var jp2 = constrain(this.j+2 ,0,grid.length-1);
 
-      } else {
-        
-          grid[this.i][this.j+1].toHighlight = false;
-
-          this.firstMove
-            ? grid[this.i][this.j+2].toHighlight = false
-            : grid[this.i][this.j+2].toHighlight = false;
-      }
+    if (this.firstClick && this.firstMove){
+      grid[this.i][jp1].toHighlight = true;
+      grid[this.i][jp2].toHighlight = true;
+    } else if (!this.firstClick && this.firstMove){
+      grid[this.i][jp1].toHighlight = false;
+      grid[this.i][jp2].toHighlight = false;
+    } else if (this.firstClick && !this.firstMove){
+      grid[this.i][jp1].toHighlight = true;
+      grid[this.i][jp2].toHighlight = false;
+    } else if (!this.firstClick && !this.firstMove){
+      grid[this.i][jp1].toHighlight = false;
+      grid[this.i][jp2].toHighlight = false;
+    }
 
   }
 
