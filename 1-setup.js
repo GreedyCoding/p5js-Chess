@@ -10,6 +10,8 @@ var imgB = [];
 var imgW = [];
 // Array for pieces
 var pieces = [];
+// Array for possible Moves
+var moves = [];
 
 
 function setup(){
@@ -32,8 +34,10 @@ function setup(){
 
 function draw(){
 
+//Colourizing all the Cells
   colourizeCells();
   renderPieces();
-  showHighlights();
+  highlights();
+
 
 }

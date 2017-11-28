@@ -5,6 +5,9 @@ class Cells {
     this.i = i;
     this.j = j;
 
+    this.blackPiece = false;
+    this.whitePiece = false;
+
     this.pawnB = false;
     this.rookB = false;
     this.knightB = false;
@@ -19,7 +22,7 @@ class Cells {
     this.queenW = false;
     this.kingW = false;
 
-    this.toHighlight = Boolean(false);
+    this.toHighlight = false;
 
   }
 
@@ -57,5 +60,20 @@ class Cells {
 
   }
 
+  statusUpdate(){
+
+    if (this.pawnB || this.rookB || this.knightB || this.bishopB || this.queenB || this.kingB){
+      this.blackPiece = true;
+    } else {
+      this.blackPiece = false;
+    }
+
+    if (this.pawnW || this.rookW || this.knightW || this.bishopW || this.queenW || this.kingW){
+      this.whitePiece = true;
+    } else {
+      this.whitePiece = false;
+    }
+
+  }
 
 }

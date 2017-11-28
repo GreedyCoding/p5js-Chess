@@ -71,11 +71,12 @@ function colourizeCells(){
 
 }
 
-function showHighlights(){
+function highlights(){
 
   for (var i1 = 0; i1 < grid.length; i1++){
     for (var i2 = 0; i2 < grid[i1].length; i2++){
       grid[i1][i2].highlight();
+      grid[i1][i2].statusUpdate();
     }
   }
 
