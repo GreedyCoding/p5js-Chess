@@ -1,17 +1,19 @@
 // Variables for colums and rows
-var cols;
-var rows;
+let cols;
+let rows;
 // Variable for the 2D Array
-var grid;
+let grid;
 // Variable for scaling the cells and scaling x and y locations for the pieces
-var scl = 100;
+let scl = 100;
 // Array for images
-var imgB = [];
-var imgW = [];
+let imgB = [];
+let imgW = [];
 // Array for pieces
-var pieces = [];
+let pieces = [];
 // Array for possible Moves
-var moves = [];
+let moves = [];
+// Variable for currently clicked Piece
+let clickedPiece;
 
 
 function setup(){

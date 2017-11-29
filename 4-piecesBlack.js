@@ -4,8 +4,8 @@ class PawnB {
 
     this.i = i;
     this.j = j;
-    this.x = i*scl+50;
-    this.y = j*scl+50;
+    this.x = this.i*scl+50;
+    this.y = this.j*scl+50;
     this.img = img;
     this.firstClick = false;
     this.firstMove = true;
@@ -19,9 +19,16 @@ class PawnB {
 
   }
 
+  update(){
+
+    this.x = this.i*scl+50;
+    this.y = this.j*scl+50;
+
+  }
+
   clickedOn(){
 
-    var distance = dist(mouseX, mouseY, this.x, this.y);
+    let distance = dist(mouseX, mouseY, this.x, this.y);
     if (distance < 50 && !this.firstClick){
       this.firstClick = true;
     } else if (distance < 50 && this.firstClick){
@@ -33,8 +40,8 @@ class PawnB {
   highlight(){
 
 
-    var jp1 = constrain(this.j+1 ,0,grid.length-1);
-    var jp2 = constrain(this.j+2 ,0,grid.length-1);
+    let jp1 = constrain(this.j+1 ,0,grid.length-1);
+    let jp2 = constrain(this.j+2 ,0,grid.length-1);
 
     if (this.firstClick && this.firstMove){
       grid[this.i][jp1].toHighlight = true;
@@ -62,6 +69,21 @@ class PawnB {
 
   move(){
 
+    for (let index = 0; index < pieces.length; index++){
+      if (pieces[index].firstClick){
+        clickedPiece = pieces[index];
+      }
+    }
+
+    for (let index = 0; index < moves.length; index++){
+      let distance = dist(mouseX, mouseY, moves[index].i*scl, moves[index].j*scl);
+      if (distance < 100){
+        clickedPiece.i = moves[index].i;
+        clickedPiece.j = moves[index].j;
+        this.firstMove = false;
+        this.firstClick = false;
+      }
+    }
 
 
   }

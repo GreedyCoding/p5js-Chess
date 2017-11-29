@@ -9,8 +9,8 @@ class PawnW extends PawnB {
     highlight(){
 
 
-      var jm1 = constrain(this.j-1 ,0,grid.length-1);
-      var jm2 = constrain(this.j-2 ,0,grid.length-1);
+      let jm1 = constrain(this.j-1 ,0,grid.length-1);
+      let jm2 = constrain(this.j-2 ,0,grid.length-1);
 
       if (this.firstClick && this.firstMove){
         grid[this.i][jm1].toHighlight = true;

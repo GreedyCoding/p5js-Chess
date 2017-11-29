@@ -1,7 +1,7 @@
 function make2DArray(cols,rows){
 
   grid = new Array(cols);
-    for (var i = 0;i < grid.length; i++){
+    for (let i = 0;i < grid.length; i++){
       grid[i] = new Array(rows);
     }
 
@@ -9,7 +9,7 @@ function make2DArray(cols,rows){
 
 function init2DArray(){
 
-  var maxcolumn = grid.length;
+  let maxcolumn = grid.length;
   for(_columns = 0; _columns < maxcolumn; _columns++){
     maxrows = grid[_columns].length;
 
@@ -32,16 +32,17 @@ function containsNot(array, object) {
 
 function mouseClicked(){
 
-  for (var _pieces = 0; _pieces < pieces.length; _pieces++){
-    pieces[_pieces].clickedOn();
+  for (let index = 0; index < pieces.length; index++){
+    pieces[index].clickedOn();
+    pieces[index].move();
   }
 
 }
 
 function colourizeCells(){
 
-  var firstBlack;
-  var Modulo = 2;
+  let firstBlack;
+  let Modulo = 2;
 
   grid.forEach(function(_columns,_columnindex){
 
@@ -83,10 +84,9 @@ function colourizeCells(){
 
 function highlights(){
 
-  for (var i1 = 0; i1 < grid.length; i1++){
-    for (var i2 = 0; i2 < grid[i1].length; i2++){
+  for (let i1 = 0; i1 < grid.length; i1++){
+    for (let i2 = 0; i2 < grid[i1].length; i2++){
       grid[i1][i2].highlight();
-      grid[i1][i2].statusUpdate();
     }
   }
 
@@ -94,7 +94,8 @@ function highlights(){
 
 function renderPieces(){
 
-  for (var i = 0; i < pieces.length; i++){
+  for (let i = 0; i < pieces.length; i++){
+    pieces[i].update();
     pieces[i].show();
     pieces[i].highlight();
   }
@@ -103,8 +104,8 @@ function renderPieces(){
 
 function setStartPos(){
 
-  for (var i1 = 0; i1 < grid.length; i1++){
-    for (var i2 = 0; i2 < grid[i1].length; i2++){
+  for (let i1 = 0; i1 < grid.length; i1++){
+    for (let i2 = 0; i2 < grid[i1].length; i2++){
 
       grid[i1][i2].pawnB = false
       grid[i1][i2].rookB = false;
@@ -171,70 +172,89 @@ function setStartPos(){
 
 function createPieces(){
 
-  for (var i1 = 0; i1 < grid.length; i1++){
-    for (var i2 = 0; i2 < grid[i1].length; i2++){
+  for (let i1 = 0; i1 < grid.length; i1++){
+    for (let i2 = 0; i2 < grid[i1].length; i2++){
 
       if (grid[i1][i2].pawnB){
 
-        var pawnB = new PawnB(grid[i1][i2].i, grid[i1][i2].j, imgB[0]);
+        let pawnB = new PawnB(grid[i1][i2].i, grid[i1][i2].j, imgB[0]);
         pieces.push(pawnB);
 
       } else if (grid[i1][i2].rookB) {
 
-        var rookB = new RookB(grid[i1][i2].i, grid[i1][i2].j, imgB[1])
+        let rookB = new RookB(grid[i1][i2].i, grid[i1][i2].j, imgB[1])
         pieces.push(rookB);
 
       } else if (grid[i1][i2].knightB) {
 
-        var knightB = new KnightB(grid[i1][i2].i, grid[i1][i2].j, imgB[2])
+        let knightB = new KnightB(grid[i1][i2].i, grid[i1][i2].j, imgB[2])
         pieces.push(knightB);
 
       } else if (grid[i1][i2].bishopB) {
 
-        var bishopB = new BishopB(grid[i1][i2].i, grid[i1][i2].j, imgB[3])
+        let bishopB = new BishopB(grid[i1][i2].i, grid[i1][i2].j, imgB[3])
         pieces.push(bishopB);
 
       } else if (grid[i1][i2].queenB) {
 
-        var queenB = new QueenB(grid[i1][i2].i, grid[i1][i2].j, imgB[4])
+        let queenB = new QueenB(grid[i1][i2].i, grid[i1][i2].j, imgB[4])
         pieces.push(queenB);
 
       } else if (grid[i1][i2].kingB) {
 
-        var kingB = new KingB(grid[i1][i2].i, grid[i1][i2].j, imgB[5])
+        let kingB = new KingB(grid[i1][i2].i, grid[i1][i2].j, imgB[5])
         pieces.push(kingB);
 
       } else if (grid[i1][i2].pawnW) {
 
-        var pawnW = new PawnW(grid[i1][i2].i, grid[i1][i2].j, imgW[0])
+        let pawnW = new PawnW(grid[i1][i2].i, grid[i1][i2].j, imgW[0])
         pieces.push(pawnW);
 
       } else if (grid[i1][i2].rookW) {
 
-        var rookW = new RookW(grid[i1][i2].i, grid[i1][i2].j, imgW[1])
+        let rookW = new RookW(grid[i1][i2].i, grid[i1][i2].j, imgW[1])
         pieces.push(rookW);
 
       } else if (grid[i1][i2].knightW) {
 
-        var knightW = new KnightW(grid[i1][i2].i, grid[i1][i2].j, imgW[2])
+        let knightW = new KnightW(grid[i1][i2].i, grid[i1][i2].j, imgW[2])
         pieces.push(knightW);
 
       } else if (grid[i1][i2].bishopW) {
 
-        var bishopW = new BishopW(grid[i1][i2].i, grid[i1][i2].j, imgW[3])
+        let bishopW = new BishopW(grid[i1][i2].i, grid[i1][i2].j, imgW[3])
         pieces.push(bishopW);
 
       } else if (grid[i1][i2].queenW) {
 
-        var queenW = new QueenW(grid[i1][i2].i, grid[i1][i2].j, imgW[4])
+        let queenW = new QueenW(grid[i1][i2].i, grid[i1][i2].j, imgW[4])
         pieces.push(queenW);
 
       } else if (grid[i1][i2].kingW) {
 
-        var kingW = new KingW(grid[i1][i2].i, grid[i1][i2].j, imgW[5])
+        let kingW = new KingW(grid[i1][i2].i, grid[i1][i2].j, imgW[5])
         pieces.push(kingW);
 
       }
+
+    }
+  }
+
+  for (let i1 = 0; i1 < grid.length; i1++){
+    for (let i2 = 0; i2 < grid[i1].length; i2++){
+
+      grid[i1][i2].pawnB = false
+      grid[i1][i2].rookB = false;
+      grid[i1][i2].knightB = false;
+      grid[i1][i2].bishopB = false;
+      grid[i1][i2].queenB = false;
+      grid[i1][i2].kingB = false;
+      grid[i1][i2].pawnW = false;
+      grid[i1][i2].rookW = false;
+      grid[i1][i2].knightW = false;
+      grid[i1][i2].bishopW = false;
+      grid[i1][i2].queenW = false;
+      grid[i1][i2].kingW = false;
 
     }
   }
