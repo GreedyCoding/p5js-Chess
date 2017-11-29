@@ -50,6 +50,20 @@ class PawnB {
       grid[this.i][jp2].toHighlight = false;
     }
 
+    for (let index1 = 0; index1 < grid.length; index1++){
+      for (let index2 = 0; index2 < grid[index1].length; index2++){
+        if (containsNot(moves, grid[index1][index2]) && grid[index1][index2].toHighlight){
+          moves.push(grid[index1][index2]);
+        }
+      }
+    }
+
+  }
+
+  move(){
+
+
+
   }
 
 }

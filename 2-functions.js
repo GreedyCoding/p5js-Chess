@@ -20,6 +20,16 @@ function init2DArray(){
 
 }
 
+function containsNot(array, object) {
+
+    for (let index1 = 0; index1 < array.length; index1++) {
+      if (array[index1] === object) {
+        return false;
+      }
+    }
+    return true;
+}
+
 function mouseClicked(){
 
   for (var _pieces = 0; _pieces < pieces.length; _pieces++){
