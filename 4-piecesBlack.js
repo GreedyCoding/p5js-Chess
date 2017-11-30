@@ -80,8 +80,11 @@ class PawnB {
       if (distance < 100){
         clickedPiece.i = moves[index].i;
         clickedPiece.j = moves[index].j;
-        this.firstMove = false;
-        this.firstClick = false;
+        clickedPiece.firstMove = false;
+        clickedPiece.firstClick = false;
+        unsetHighlights();
+        moves.length = 0;
+
       }
     }
 

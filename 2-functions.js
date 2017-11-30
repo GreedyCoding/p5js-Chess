@@ -84,9 +84,17 @@ function colourizeCells(){
 
 function highlights(){
 
+  for (let i = 0; i < moves.length; i++){
+    moves[i].highlight();
+  }
+
+}
+
+function unsetHighlights(){
+
   for (let i1 = 0; i1 < grid.length; i1++){
     for (let i2 = 0; i2 < grid[i1].length; i2++){
-      grid[i1][i2].highlight();
+      grid[i1][i2].toHighlight = false;
     }
   }
 
@@ -123,14 +131,9 @@ function setStartPos(){
     }
   }
 
-  grid[0][1].pawnB = true;
-  grid[1][1].pawnB = true;
-  grid[2][1].pawnB = true;
-  grid[3][1].pawnB = true;
-  grid[4][1].pawnB = true;
-  grid[5][1].pawnB = true;
-  grid[6][1].pawnB = true;
-  grid[7][1].pawnB = true;
+  for (let i = 0; i < grid.length; i++){
+    grid[i][1].pawnB = true;
+  }
 
   grid[0][0].rookB = true;
   grid[7][0].rookB = true;
@@ -145,14 +148,9 @@ function setStartPos(){
 
   grid[4][0].kingB = true;
 
-  grid[0][6].pawnW = true;
-  grid[1][6].pawnW = true;
-  grid[2][6].pawnW = true;
-  grid[3][6].pawnW = true;
-  grid[4][6].pawnW = true;
-  grid[5][6].pawnW = true;
-  grid[6][6].pawnW = true;
-  grid[7][6].pawnW = true;
+  for (let i = 0; i < grid.length; i++){
+    grid[i][6].pawnW = true;
+  }
 
   grid[0][7].rookW = true;
   grid[7][7].rookW = true;
