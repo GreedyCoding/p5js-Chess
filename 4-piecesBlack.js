@@ -57,10 +57,10 @@ class PawnB {
       grid[this.i][jp2].toHighlight = false;
     }
 
-    for (let index1 = 0; index1 < grid.length; index1++){
-      for (let index2 = 0; index2 < grid[index1].length; index2++){
-        if (containsNot(moves, grid[index1][index2]) && grid[index1][index2].toHighlight){
-          moves.push(grid[index1][index2]);
+    for (let i1 = 0; i1 < grid.length; i1++){
+      for (let i2 = 0; i2 < grid[i1].length; i2++){
+        if (containsNot(moves, grid[i1][i2]) && grid[i1][i2].toHighlight){
+          moves.push(grid[i1][i2]);
         }
       }
     }
@@ -69,17 +69,17 @@ class PawnB {
 
   move(){
 
-    for (let index = 0; index < pieces.length; index++){
-      if (pieces[index].firstClick){
-        clickedPiece = pieces[index];
+    for (let i = 0; i < pieces.length; i++){
+      if (pieces[i].firstClick){
+        clickedPiece = pieces[i];
       }
     }
 
-    for (let index = 0; index < moves.length; index++){
-      let distance = dist(mouseX, mouseY, moves[index].i*scl, moves[index].j*scl);
+    for (let i = 0; i < moves.length; i++){
+      let distance = dist(mouseX, mouseY, moves[i].i*scl, moves[i].j*scl);
       if (distance < 100){
-        clickedPiece.i = moves[index].i;
-        clickedPiece.j = moves[index].j;
+        clickedPiece.i = moves[i].i;
+        clickedPiece.j = moves[i].j;
         clickedPiece.firstMove = false;
         clickedPiece.firstClick = false;
         unsetHighlights();

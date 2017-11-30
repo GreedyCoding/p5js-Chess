@@ -41,5 +41,4 @@ function draw(){
   renderPieces();
   highlights();
 
-
 }

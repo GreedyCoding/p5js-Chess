@@ -1,7 +1,7 @@
 function make2DArray(cols,rows){
 
   grid = new Array(cols);
-    for (let i = 0;i < grid.length; i++){
+    for (let i = 0; i < grid.length; i++){
       grid[i] = new Array(rows);
     }
 
@@ -22,8 +22,8 @@ function init2DArray(){
 
 function containsNot(array, object) {
 
-    for (let index1 = 0; index1 < array.length; index1++) {
-      if (array[index1] === object) {
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] === object) {
         return false;
       }
     }
@@ -32,9 +32,9 @@ function containsNot(array, object) {
 
 function mouseClicked(){
 
-  for (let index = 0; index < pieces.length; index++){
-    pieces[index].clickedOn();
-    pieces[index].move();
+  for (let i = 0; i < pieces.length; i++){
+    pieces[i].clickedOn();
+    pieces[i].move();
   }
 
 }
@@ -44,9 +44,9 @@ function colourizeCells(){
   let firstBlack;
   let Modulo = 2;
 
-  grid.forEach(function(_columns,_columnindex){
+  grid.forEach(function(_columns,_columni){
 
-    if(_columnindex % Modulo == 0){
+    if(_columni % Modulo == 0){
 
       firstBlack = true;
 
@@ -56,12 +56,12 @@ function colourizeCells(){
 
     }
 
-    _columns.forEach(function(_rows, _index){
+    _columns.forEach(function(_rows, _i){
 
 
       if(firstBlack){
 
-        if(_index % Modulo == 0){
+        if(_i % Modulo == 0){
           _rows.showPattern2();
         }  else {
           _rows.showPattern1()
@@ -69,7 +69,7 @@ function colourizeCells(){
 
       } else {
 
-        if(_index % Modulo == 0){
+        if(_i % Modulo == 0){
           _rows.showPattern1();
         }  else {
           _rows.showPattern2()
