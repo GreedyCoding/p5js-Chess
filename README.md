@@ -22,6 +22,7 @@ Chess game by GreedyCoding using the p5js library
 # Changelog 0.0.2
   Additions:
   - Added movement of the Rooks and Knights.
+  - Changed inheritance so the white pieces are getting their movement from their black counterparts.
 
 
 
