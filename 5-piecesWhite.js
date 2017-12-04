@@ -31,7 +31,7 @@ class PawnW extends PawnB {
   }
 
 
-class RookW extends PawnB {
+class RookW extends RookB {
 
   constructor(i,j, img){
 
@@ -41,7 +41,7 @@ class RookW extends PawnB {
 
 }
 
-class KnightW extends PawnB {
+class KnightW extends KnightB {
 
   constructor(i,j, img){
 
@@ -51,7 +51,7 @@ class KnightW extends PawnB {
 
 }
 
-class BishopW extends PawnB {
+class BishopW extends BishopB {
 
   constructor(i,j, img){
 
@@ -61,7 +61,7 @@ class BishopW extends PawnB {
 
 }
 
-class QueenW extends PawnB {
+class QueenW extends QueenB {
 
   constructor(i,j, img){
 
@@ -71,7 +71,7 @@ class QueenW extends PawnB {
 
 }
 
-class KingW extends PawnB {
+class KingW extends KingB {
 
   constructor(i,j, img){
 

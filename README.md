@@ -11,9 +11,18 @@ Chess game by GreedyCoding using the p5js library
    - Pawns are able to be clicked on and show the possible moves for them.
    - Pawns can make the first Moves
    - Pawns can fully move across the board
+   - Rooks and Knights can now fully move too but there is a problem with the Highlights.
 
   Current Bugs
-  - After moving Pawns available moves won´t get highlighted at all. Pieces are able to move further though.
+  - After moving Pawns once available moves won´t get highlighted at all. Pieces are able to move further though.
+  - Highlights dont seem to work at all with most pieces.
+  - Knights moves are not right when they are placed in a corner.
+
+
+# Changelog 0.0.2
+  Additions:
+  - Added movement of the Rooks and Knights.
+
 
 
 # Changelog 0.0.1

@@ -34,6 +34,7 @@ function mouseClicked(){
 
   for (let i = 0; i < pieces.length; i++){
     pieces[i].clickedOn();
+    pieces[i].update();
     pieces[i].move();
   }
 
