@@ -14,25 +14,23 @@ let pieces = [];
 let moves = [];
 // Variable for currently clicked Piece
 let clickedPiece;
+// Variables for Buttons
+let restartButton;
 
 
 function setup(){
 
+
   createCanvas(800,800);
-// Creating colums and rows
+  createDomElements();
   cols = floor(width/scl);
   rows = floor(height/scl);
-// Making and the 2D Array
   make2DArray(cols,rows);
-// Creating Cells in every Spot of the Array
   init2DArray();
-// Setting the Pieces to their Starting Position
   setStartPos();
-// Creating all the Pieces
   createPieces();
 
 }
-
 
 function draw(){
 

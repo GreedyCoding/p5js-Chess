@@ -111,26 +111,24 @@ function renderPieces(){
 
 }
 
+function restartGame(){
+
+  pieces.length = null;
+  setStartPos();
+  createPieces();
+
+}
+
+function createDomElements(){
+
+  document.body.style.backgroundColor = "#0c1927";
+  restartButton = createButton("Start New Game");
+  restartButton.mousePressed(restartGame);
+  restartButton.position(10,810);
+
+}
+
 function setStartPos(){
-
-  for (let i1 = 0; i1 < grid.length; i1++){
-    for (let i2 = 0; i2 < grid[i1].length; i2++){
-
-      grid[i1][i2].pawnB = false
-      grid[i1][i2].rookB = false;
-      grid[i1][i2].knightB = false;
-      grid[i1][i2].bishopB = false;
-      grid[i1][i2].queenB = false;
-      grid[i1][i2].kingB = false;
-      grid[i1][i2].pawnW = false;
-      grid[i1][i2].rookW = false;
-      grid[i1][i2].knightW = false;
-      grid[i1][i2].bishopW = false;
-      grid[i1][i2].queenW = false;
-      grid[i1][i2].kingW = false;
-
-    }
-  }
 
   for (let i = 0; i < grid.length; i++){
     grid[i][1].pawnB = true;
