@@ -18,6 +18,15 @@ Chess game by GreedyCoding using the p5js library
   - Highlights dont seem to work at all with most pieces.
   - Knights moves are not right when they are placed in a corner.
 
+# Changelog 0.0.3
+  Additions:
+  - Added Page Background
+  - Added function restartGame().
+  - Added Button to restart the game.
+
+  Removed:
+  - Removed some useless comments.
+  - Removed part of function setStartPos() that had no use.
 
 # Changelog 0.0.2
   Additions:
