@@ -124,7 +124,7 @@ function createDomElements(){
   document.body.style.backgroundColor = "#0c1927";
   restartButton = createButton("Start New Game");
   restartButton.mousePressed(restartGame);
-  restartButton.position(10,810);
+  restartButton.position((pageWidth/2)-400,840);
 
 }
 

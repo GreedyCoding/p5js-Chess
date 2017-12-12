@@ -14,15 +14,16 @@ Chess game by GreedyCoding using the p5js library
    - Rooks and Knights can now fully move too but there is a problem with the Highlights.
 
   Current Bugs
-  - After moving Pawns once available moves won´t get highlighted at all. Pieces are able to move further though.
   - Highlights dont seem to work at all with most pieces.
   - Knights moves are not right when they are placed in a corner.
 
 # Changelog 0.0.3
   Additions:
+  - Added jQuery library.
+  - Added Centering for the Chessboard and the buttons
   - Added Page Background
-  - Added function restartGame().
   - Added Button to restart the game.
+  - Added function restartGame().
 
   Removed:
   - Removed some useless comments.

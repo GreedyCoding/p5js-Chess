@@ -1,27 +1,28 @@
-// Variables for colums and rows
+// Variable for Canvas
+let canvas;
+// Variable for Cols, Rows and the 2D Array
 let cols;
 let rows;
-// Variable for the 2D Array
 let grid;
-// Variable for scaling the cells and scaling x and y locations for the pieces
+// Scale for the Cells
 let scl = 100;
-// Array for images
+// Arrays
 let imgB = [];
 let imgW = [];
-// Array for pieces
 let pieces = [];
-// Array for possible Moves
 let moves = [];
-// Variable for currently clicked Piece
+// Variable for currently Clicked Piece
 let clickedPiece;
 // Variables for Buttons
 let restartButton;
+// jQuery get Window Width
+let pageWidth = $( window ).width();
 
 
 function setup(){
 
-
-  createCanvas(800,800);
+  canvas = createCanvas(800,800);
+  canvas.position((pageWidth/2)-400,30);
   createDomElements();
   cols = floor(width/scl);
   rows = floor(height/scl);
