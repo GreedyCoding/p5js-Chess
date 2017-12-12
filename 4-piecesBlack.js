@@ -4,8 +4,8 @@ class PawnB {
 
     this.i = i;
     this.j = j;
-    this.x = this.i*scl+50;
-    this.y = this.j*scl+50;
+    this.x = i*scl;
+    this.y = j*scl;
     this.img = img;
     this.firstClick = false;
     this.firstMove = true;
@@ -28,12 +28,21 @@ class PawnB {
 
   clickedOn(){
 
-    let distance = dist(mouseX, mouseY, this.x, this.y);
-    if (distance < 50 && !this.firstClick){
+    let edgeX = this.x - 50;
+    let edgeY = this.y - 50;
+
+    if (mouseX > edgeX && mouseX < edgeX + scl && mouseY > edgeY && mouseY < edgeY + scl && !this.firstClick){
       this.firstClick = true;
-    } else if (distance < 50 && this.firstClick){
+    } else if (mouseX > edgeX && mouseX < edgeX + scl && mouseY > edgeY && mouseY < edgeY + scl && this.firstClick){
       this.firstClick = false;
     }
+
+    // let distance = dist(mouseX, mouseY, this.x, this.y);
+    // if (distance < 50 && !this.firstClick){
+    //   this.firstClick = true;
+    // } else if (distance < 50 && this.firstClick){
+    //   this.firstClick = false;
+    // }
 
   }
 
@@ -251,8 +260,6 @@ class KnightB extends PawnB {
       grid[ip2][jm1].toHighlight = true;
       grid[ip2][jp1].toHighlight = true;
 
-      grid[this.i][this.j].toHighlight = false;
-
     } else if (!this.firstClick){
 
       grid[im1][jm2].toHighlight = false;
@@ -263,6 +270,7 @@ class KnightB extends PawnB {
       grid[ip2][jp1].toHighlight = false;
       grid[ip1][jm1].toHighlight = false;
       grid[ip1][jp1].toHighlight = false;
+
     }
 
     for (let i1 = 0; i1 < grid.length; i1++){

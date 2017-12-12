@@ -24,6 +24,7 @@ Chess game by GreedyCoding using the p5js library
 
   Removed:
   - Removed some useless comments.
+  - Removed some calculations in the Cell functions with an addation of a new Variable.
   - Removed part of function setStartPos() that had no use.
 
 ### Changelog 0.0.2
