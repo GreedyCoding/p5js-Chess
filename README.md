@@ -16,11 +16,11 @@ Chess game by GreedyCoding using the p5js library
 
 ### Changelog 0.0.3
   Additions:
-  - Added jQuery library.
-  - Added Centering for the Chessboard and the buttons
+  - Added interactive Centering for the Chessboard and the buttons
   - Added Page Background
   - Added Button to restart the game.
   - Added function restartGame().
+  - Added Touch Support.
 
   Removed:
   - Removed some useless comments.

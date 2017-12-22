@@ -15,14 +15,12 @@ let moves = [];
 let clickedPiece;
 // Variables for Buttons
 let restartButton;
-// jQuery get Window Width
-let pageWidth = $( window ).width();
 
 
 function setup(){
 
   canvas = createCanvas(800,800);
-  canvas.position((pageWidth/2)-400,30);
+  canvas.position((windowWidth/2)-width/2,30);
   createDomElements();
   cols = floor(width/scl);
   rows = floor(height/scl);

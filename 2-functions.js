@@ -40,6 +40,32 @@ function mouseClicked(){
 
 }
 
+function touchStarted(){
+
+  for (let i = 0; i < pieces.length; i++){
+    pieces[i].clickedOn();
+    pieces[i].update();
+    pieces[i].move();
+  }
+
+}
+
+function windowResized(){
+
+  resetPositions();
+
+}
+
+function resetPositions(){
+
+  canvas.position((windowWidth/2)-width/2,30);
+  restartButton.position((windowWidth/2)-width/2,840);
+  // if (windowWidth<800){
+  //   resizeCanvas(windowWidth, windowWidth);
+  // }
+
+}
+
 function colourizeCells(){
 
   let firstBlack;
@@ -124,7 +150,7 @@ function createDomElements(){
   document.body.style.backgroundColor = "#0c1927";
   restartButton = createButton("Start New Game");
   restartButton.mousePressed(restartGame);
-  restartButton.position((pageWidth/2)-400,840);
+  restartButton.position((windowWidth/2)-width/2,840);
 
 }
 
