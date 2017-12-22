@@ -40,15 +40,15 @@ function mouseClicked(){
 
 }
 
-function touchStarted(){
-
-  for (let i = 0; i < pieces.length; i++){
-    pieces[i].clickedOn();
-    pieces[i].update();
-    pieces[i].move();
-  }
-
-}
+// function touchStarted(){
+//
+//   for (let i = 0; i < pieces.length; i++){
+//     pieces[i].clickedOn();
+//     pieces[i].update();
+//     pieces[i].move();
+//   }
+//
+// }
 
 function windowResized(){
 

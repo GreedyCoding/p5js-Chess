@@ -13,6 +13,8 @@ Chess game by GreedyCoding using the p5js library
 ## Current Bugs
   - Highlights dont seem to work at all with most pieces.
   - Knights moves are not right when they are placed in a corner.
+  - Tried to add touch Support, but it broke the mouse interactions.
+
 
 ### Changelog 0.0.3
   Additions:
@@ -20,7 +22,6 @@ Chess game by GreedyCoding using the p5js library
   - Added Page Background
   - Added Button to restart the game.
   - Added function restartGame().
-  - Added Touch Support.
 
   Removed:
   - Removed some useless comments.
