@@ -4,6 +4,7 @@ class PawnB {
 
     this.i = i;
     this.j = j;
+    this.color = false;
     this.x = i*scl;
     this.y = j*scl;
     this.img = img;
@@ -43,6 +44,12 @@ class PawnB {
     // } else if (distance < 50 && this.firstClick){
     //   this.firstClick = false;
     // }
+
+  }
+
+  checkPawnCaptures(){
+
+    
 
   }
 
@@ -94,10 +101,18 @@ class PawnB {
         unsetHighlights();
         moves.length = null;
         clickedPiece = null;
-
       }
     }
 
+  }
+
+  captured(){
+
+    for (var i = 0; i < pieces.length; i++){
+      if (this.i === pieces[i].i && this.j === pieces[i].j){
+        pieces.splice(i, 1);
+      }
+    }
 
   }
 

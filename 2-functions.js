@@ -147,7 +147,6 @@ function restartGame(){
 
 function createDomElements(){
 
-  document.body.style.backgroundColor = "#0c1927";
   restartButton = createButton("Start New Game");
   restartButton.mousePressed(restartGame);
   restartButton.position((windowWidth/2)-width/2,840);

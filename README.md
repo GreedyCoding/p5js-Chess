@@ -15,11 +15,22 @@ Chess game by GreedyCoding using the p5js library
   - Knights moves are not right when they are placed in a corner.
   - Tried to add touch Support, but it broke the mouse interactions.
 
+### Changelog 0.0.4
+  Additions
+  - Added Page title
+  - Added Favicon
+  - Added a Variable for Color in the Pieces Objects (True=White/Black=False).
+  - Added function checkPawnCaptures() for the Black pawns.
+  - Added function captured() to remove the piece from the array if it has been captured.
+
+  Changes
+  - Changed Backgroundcolor handling to HTML.
+  - Added function to capture Pieces and remove them from the board.
 
 ### Changelog 0.0.3
   Additions:
-  - Added interactive Centering for the Chessboard and the buttons
-  - Added Page Background
+  - Added interactive Centering for the Chessboard and the buttons.
+  - Added Page Background.
   - Added Button to restart the game.
   - Added function restartGame().
 

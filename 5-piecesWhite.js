@@ -3,6 +3,7 @@ class PawnW extends PawnB {
     constructor(i,j, img){
 
       super(i,j,img);
+      this.color = true;
 
     }
 
@@ -36,6 +37,7 @@ class RookW extends RookB {
   constructor(i,j, img){
 
     super(i,j,img);
+    this.color = true;
 
   }
 
@@ -46,6 +48,7 @@ class KnightW extends KnightB {
   constructor(i,j, img){
 
     super(i,j,img);
+    this.color = true;
 
   }
 
@@ -56,6 +59,7 @@ class BishopW extends BishopB {
   constructor(i,j, img){
 
     super(i,j,img);
+    this.color = true;
 
   }
 
@@ -66,6 +70,7 @@ class QueenW extends QueenB {
   constructor(i,j, img){
 
     super(i,j,img);
+    this.color = true;
 
   }
 
@@ -76,6 +81,7 @@ class KingW extends KingB {
   constructor(i,j, img){
 
     super(i,j,img);
+    this.color = true;
 
   }
 
